@@ -46,8 +46,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // auto-mouse support available.  Keymap-level `config.h` is too late for
 // compiling the shared library, so define these here.
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_DEFAULT_LAYER 1 // default layer for auto mouse, can be changed by keymap-level `config.h`
-#define AUTO_MOUSE_TIME 500 // ms: time to return to original layer
+#define AUTO_MOUSE_DEFAULT_LAYER 4
+#define AUTO_MOUSE_TIME 2000 // ms: time to return to original layer
 
 // RGB LED settings
 #define WS2812_DI_PIN       D3
