@@ -38,4 +38,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 7
-#define KEYBALL_SCROLL_DIV_DEFAULT 3
+#define KEYBALL_SCROLL_DIV_DEFAULT 2
