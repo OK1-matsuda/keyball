@@ -91,7 +91,11 @@ void oledkit_render_info_user(void) {
 
 // Auto mouse mode有効化
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
+/* Ensure auto-mouse is enabled and the configured default layer exists
+   before attempting to activate it. */
+#include "lib/keyball/keyball.h"
 void pointing_device_init_user(void) {
-    set_auto_mouse_enable(true);
+  set_auto_mouse_enable(true);
+  keyball_activate_layer_safe(AUTO_MOUSE_DEFAULT_LAYER);
 }
 #endif

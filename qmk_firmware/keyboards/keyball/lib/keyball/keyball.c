@@ -54,6 +54,28 @@ keyball_t keyball = {
     .pressing_keys = { BL, BL, BL, BL, BL, BL, 0 },
 };
 
+// Default weak implementation: unknown number of layers.  Keymaps can
+// override this by providing their own `keyball_get_num_layers()` that
+// returns the actual count.
+uint8_t keyball_get_num_layers(void) { return 0; }
+
+bool keyball_layer_exists(uint8_t layer) {
+    uint8_t n = keyball_get_num_layers();
+    if (n == 0) {
+        // Unknown count -> be permissive for compatibility.
+        return true;
+    }
+    return layer < n;
+}
+
+void keyball_activate_layer_safe(uint8_t layer) {
+    if (keyball_layer_exists(layer)) {
+        layer_on(layer);
+    } else {
+        dprintf("keyball: refuse to activate layer %d (not present)\n", layer);
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // Hook points
 

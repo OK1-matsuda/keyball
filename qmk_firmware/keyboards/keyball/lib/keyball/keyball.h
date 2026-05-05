@@ -192,6 +192,18 @@ typedef enum {
 
 extern keyball_t keyball;
 
+// Returns number of layers in active keymap.  Weakly defined so keymaps can
+// override it to provide an accurate count.  If it returns 0, callers should
+// assume unknown and allow operations (backwards compatible).
+uint8_t keyball_get_num_layers(void) __attribute__((weak));
+
+// Helper to check if a layer index likely exists in current keymap.
+bool keyball_layer_exists(uint8_t layer);
+
+// Activate a layer only if it exists (guard).  Emits a debug message when
+// refusing to activate.
+void keyball_activate_layer_safe(uint8_t layer);
+
 //////////////////////////////////////////////////////////////////////////////
 // Hook points
 
