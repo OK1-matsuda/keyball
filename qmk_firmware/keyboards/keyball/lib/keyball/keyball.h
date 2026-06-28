@@ -177,6 +177,10 @@ typedef struct {
     keypos_t       last_pos;
     report_mouse_t last_mouse;
 
+    uint16_t auto_mouse_layer_timeout;
+    layer_state_t last_layer_state;
+    uint16_t total_mouse_movement;
+    
     // Buffer to indicate pressing keys.
     char pressing_keys[KEYBALL_OLED_MAX_PRESSING_KEYCODES + 1];
 } keyball_t;
@@ -272,6 +276,10 @@ void keyball_set_scroll_div(uint8_t div);
 ///
 ///     CPI = v * 100
 uint8_t keyball_get_cpi(void);
+
+#ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
+void keyball_handle_auto_mouse_layer_change(layer_state_t state);
+#endif
 
 /// keyball_set_cpi changes CPI of trackball.
 /// Valid values are 0 to 120. If it is 0, KEYBALL_CPI_DEFAULT will be used,
