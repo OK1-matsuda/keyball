@@ -731,14 +731,14 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
         keycode &= 0xff;
     }
-    
+
     
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
     // reduce auto mouse timeout if mouse key is pressed.
-    if ((is_mouse_record_kb(keycode, record) || IS_MOUSEKEY(keycode)) && record->event.pressed) {
-        set_auto_mouse_timeout(keyball_get_auto_mouse_timeout());
-        keyball.total_mouse_movement = 0;
-    }
+    // if ((is_mouse_record_kb(keycode, record) || IS_MOUSEKEY(keycode)) && record->event.pressed) {
+    //    set_auto_mouse_timeout(keyball_get_auto_mouse_timeout());
+    //    keyball.total_mouse_movement = 0;
+    // }
 #endif
 
     switch (keycode) {
@@ -799,9 +799,9 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 add_cpi(-10);
                 break;
 
-            case SCRL_TO:
-                keyball_set_scroll_mode(!keyball.scroll_mode);
-                break;
+            // case SCRL_TO:
+            //    keyball_set_scroll_mode(!keyball.scroll_mode);
+            //    break;
             case SCRL_DVI:
                 add_scroll_div(1);
                 break;
