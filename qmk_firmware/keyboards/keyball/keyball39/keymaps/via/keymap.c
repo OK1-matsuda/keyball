@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_universal(
     KC_EXLM  , S(KC_2)  , S(KC_3)  , KC_DLR   , S(KC_5)  ,                            S(KC_6)  , S(KC_7)  , S(KC_8)  , S(KC_9)  , S(KC_0)  ,
-    _______  ,LSFT_T(KC_NUHS), KC_LBRC  , KC_RBRC  , KC_LALT  ,                  RALT_T(KC_EQL), KC_MINS  , _______  ,RSFT_T(S(KC_QUOT)),RCTL_T(KC_QUOT),
+    _______  ,LSFT_T(KC_NUHS), KC_LBRC  , KC_RBRC  , KC_LALT  ,                  RALT_T(KC_EQL), KC_MINS  , (KC_QUOT)  ,RSFT_T(KC_QUOT),RCTL_T(KC_QUOT),
     _______  ,S(KC_NUHS),S(KC_LBRC),S(KC_RBRC), _______  ,                           S(KC_EQL),S(KC_MINS) , _______  , _______  , _______   ,
     _______  , _______   , _______  , _______  , _______  , _______  ,      _______    , _______    , _______  , _______  , _______  , _______
   ),
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     
   [3] = LAYOUT_universal(
-  _______   , KC_F7      , KC_F8    , KC_F9   , KC_F12   ,                            LGUI_T(KC_LEFT), LGUI_T(KC_DOWN), LGUI_T(KC_UP), LGUI_T(KC_RGHT), _______ ,
+  _______   , KC_F7      , KC_F8    , KC_F9   , KC_F12   ,                            LGUI(KC_LEFT), LGUI(KC_DOWN), LGUI(KC_UP), LGUI(KC_RGHT), _______ ,
   _______   , KC_F4      , KC_F5    , KC_F6   , KC_F11   ,                            KC_LEFT  , KC_DOWN  , KC_UP   , KC_RGHT  , _______  ,
   _______   , KC_F1      , KC_F2    , KC_F3   , KC_F10   ,                            _______  , KC_PGDN , KC_PGUP , _______  , _______ ,
   _______   , _______    , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
