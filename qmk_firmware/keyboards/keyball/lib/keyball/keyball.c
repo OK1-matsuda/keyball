@@ -257,7 +257,12 @@ __attribute__((weak)) void keyball_on_apply_motion_to_mouse_scroll(keyball_motio
             r->v = 0;
             break;
         default:
-            // pass by without doing anything
+            if (abs(r->h) > abs(r->v)) {
+                r->v = 0;
+            }
+            else {
+                r->h = 0;
+            }
             break;
     }
 #endif
